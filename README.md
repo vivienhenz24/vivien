@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vivien's Essay Website
 
-## Getting Started
+A personal essay website built with Next.js where each essay is stored as a separate markdown file.
 
-First, run the development server:
+## Features
+
+- **File-based essays**: Each essay is a separate markdown file in `src/content/essays/`
+- **Automatic listing**: Essays are automatically listed on the homepage
+- **Markdown support**: Write essays in markdown with frontmatter for metadata
+- **Responsive design**: Clean, readable typography optimized for reading
+
+## How to Add New Essays
+
+### Method 1: Using the helper script (Recommended)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm create-essay
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will prompt you for:
+- Essay title
+- Date (YYYY-MM-DD format)
+- Filename (without .md extension)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Method 2: Manual creation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Create a new `.md` file in `src/content/essays/`
+2. Add frontmatter at the top:
 
-## Learn More
+```markdown
+---
+title: "Your Essay Title"
+date: "2024-01-15"
+---
 
-To learn more about Next.js, take a look at the following resources:
+Your essay content here...
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Essay File Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Each essay file should have:
 
-## Deploy on Vercel
+1. **Frontmatter** (at the top, between `---` lines):
+   - `title`: The essay title
+   - `date`: Publication date in YYYY-MM-DD format
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Content**: Your essay in markdown format
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Example:
+```markdown
+---
+title: "My First Essay"
+date: "2024-01-15"
+---
+
+This is my first essay. You can write in **bold**, *italic*, and use other markdown features.
+
+## Subheadings
+
+You can use different levels of headings:
+
+### Level 3 heading
+
+And so on...
+```
+
+## Development
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
+```
+
+## File Structure
+
+```
+src/
+├── app/
+│   ├── [id]/
+│   │   └── page.tsx          # Individual essay page
+│   ├── globals.css           # Global styles
+│   ├── layout.tsx            # Root layout
+│   └── page.tsx              # Homepage with essay list
+├── content/
+│   └── essays/               # Essay markdown files
+│       ├── thoughts.md
+│       ├── reflections.md
+│       └── creativity.md
+└── lib/
+    └── essays.ts             # Essay loading utilities
+```
+
+## Customization
+
+- **Styling**: Edit `src/app/globals.css` for typography and layout
+- **Layout**: Modify `src/app/layout.tsx` for site-wide changes
+- **Essay format**: Update the frontmatter structure in `src/lib/essays.ts`

@@ -1,23 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-
-// Sample diary entries data - you can replace this with your actual entries
-const diaryEntries = {
-  'thoughts': {
-    title: 'Thoughts',
-    content: `
-      Today I decided to start this diary. It feels like the right time to document my thoughts and experiences.
-      
-      I've been thinking about how important it is to capture moments, both big and small. Life moves so quickly, and sometimes we forget the details that make each day unique.
-      
-      This morning, I woke up with a sense of clarity I haven't felt in a while. Maybe it's the new year, or maybe it's just time for a change. Whatever it is, I want to hold onto this feeling.
-      
-      I'm not sure what this diary will become, but I'm excited to find out. Maybe it will be a place for reflection, or maybe it will just be a record of my days. Either way, it feels right.
-      
-      Here's to new beginnings and the stories we'll tell.
-    `
-  }
-}
+import { getEssayById } from '@/lib/essays'
 
 interface PageProps {
   params: {
@@ -25,29 +8,31 @@ interface PageProps {
   }
 }
 
-export default function DiaryEntry({ params }: PageProps) {
-  const entry = diaryEntries[params.id as keyof typeof diaryEntries]
+export default function EssayPage({ params }: PageProps) {
+  const essay = getEssayById(params.id)
 
-  if (!entry) {
+  if (!essay) {
     notFound()
   }
 
   return (
     <div className="min-h-screen p-8">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <Link href="/" className="text-blue-600 hover:underline mb-8 inline-block">
-          ← back
+          ← back to essays
         </Link>
         
-        <h1 className="text-2xl font-bold mb-6">{entry.title}</h1>
-        
-        <div className="prose">
-          {entry.content.split('\n\n').map((paragraph, index) => (
-            <p key={index} className="mb-4 leading-relaxed">
-              {paragraph.trim()}
-            </p>
-          ))}
-        </div>
+        <article className="prose prose-lg max-w-none">
+          <header className="mb-8">
+            <h1 className="text-4xl font-bold mb-2">{essay.title}</h1>
+            <time className="text-gray-600 text-sm">{essay.date}</time>
+          </header>
+          
+          <div 
+            className="leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: essay.htmlContent }}
+          />
+        </article>
       </div>
     </div>
   )

@@ -1,28 +1,29 @@
 import Link from 'next/link'
-
-// Sample diary entries - you can replace these with your actual entries
-const diaryEntries = [
-  {
-    id: 'thoughts',
-    title: 'Thoughts'
-  }
-]
+import { getAllEssays } from '@/lib/essays'
 
 export default function Home() {
+  const essays = getAllEssays()
+
   return (
     <div className="min-h-screen p-8">
-      <div className="max-w-md mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Vivien's Diary</h1>
+      <div className="max-w-2xl mx-auto">
+        <h1 className="text-3xl font-bold mb-8">Vivien's Essays</h1>
         
-        <div className="space-y-4">
-          {diaryEntries.map((entry) => (
-            <div key={entry.id}>
-              <Link href={`/${entry.id}`} className="text-blue-600 hover:underline">
-                {entry.title}
+        <div className="space-y-3">
+          {essays.map((essay) => (
+            <div key={essay.id}>
+              <Link href={`/${essay.id}`} className="text-blue-600 underline hover:text-blue-800">
+                {essay.title}
               </Link>
             </div>
           ))}
         </div>
+        
+        {essays.length === 0 && (
+          <p className="text-gray-500 text-center py-8">
+            No essays yet. Add some markdown files to the src/content/essays directory.
+          </p>
+        )}
       </div>
     </div>
   )
