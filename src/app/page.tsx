@@ -6,8 +6,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen p-8">
-      <div className="max-w-2xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Vivien's Essays</h1>
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-3xl font-semibold mb-8">Some notes</h1>
         
         <div className="space-y-3">
           {essays.map((essay) => (

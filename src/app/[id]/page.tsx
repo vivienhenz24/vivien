@@ -23,10 +23,10 @@ export default function EssayPage({ params }: PageProps) {
         </Link>
         
         <article className="prose prose-lg max-w-none">
-          <header className="mb-8">
-            <h1 className="text-4xl font-bold mb-2">{essay.title}</h1>
+          <div className="mb-8">
+            <div className="text-2xl text-black font-semibold mb-2">{essay.title}</div>
             <time className="text-gray-600 text-sm">{essay.date}</time>
-          </header>
+          </div>
           
           <div 
             className="leading-relaxed"

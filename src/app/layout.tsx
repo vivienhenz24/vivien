@@ -7,8 +7,8 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "My Personal Diary",
-  description: "A simple, personal diary for thoughts and reflections",
+  title: "Some notes",
+  description: "just a diary",
 };
 
 export default function RootLayout({

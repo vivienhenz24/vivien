@@ -35,11 +35,18 @@ export function getEssayById(id: string): Essay | null {
       .processSync(matterResult.content)
     const contentHtml = processedContent.toString()
     
+    // Format date as "Month Year"
+    const date = new Date(matterResult.data.date)
+    const formattedDate = date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long' 
+    })
+    
     // Combine the data with the id
     return {
       id,
       title: matterResult.data.title,
-      date: matterResult.data.date,
+      date: formattedDate,
       content: matterResult.content,
       htmlContent: contentHtml,
     }
@@ -61,11 +68,18 @@ export function getAllEssays(): Essay[] {
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents)
     
+    // Format date as "Month Year"
+    const date = new Date(matterResult.data.date)
+    const formattedDate = date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long' 
+    })
+    
     // Combine the data with the id
     return {
       id,
       title: matterResult.data.title,
-      date: matterResult.data.date,
+      date: formattedDate,
       content: matterResult.content,
       htmlContent: '', // We don't need HTML for the list view
     }
