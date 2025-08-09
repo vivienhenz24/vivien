@@ -2,14 +2,13 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getEssayById } from '@/lib/essays'
 
-interface PageProps {
-  params: {
-    id: string
-  }
-}
-
-export default function EssayPage({ params }: PageProps) {
-  const essay = getEssayById(params.id)
+export default async function EssayPage({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const { id } = await params
+  const essay = getEssayById(id)
 
   if (!essay) {
     notFound()

@@ -50,7 +50,7 @@ export function getEssayById(id: string): Essay | null {
       content: matterResult.content,
       htmlContent: contentHtml,
     }
-  } catch (error) {
+  } catch {
     return null
   }
 }

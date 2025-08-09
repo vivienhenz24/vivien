@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx --report-unused-disable-directives",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
     "create-essay": "node scripts/create-essay.js"
   },
   "dependencies": {
