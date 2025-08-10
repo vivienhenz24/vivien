@@ -40,7 +40,7 @@ body {
 .prose {
   color: #292524;
   max-width: 70ch;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.8;
   font-weight: 400;
 }
@@ -104,4 +104,52 @@ body {
 
 .prose a:hover {
   color: #1d4ed8;
+}
+
+/* Horizontal rule styles */
+.prose hr {
+  border: none;
+  border-top: 2px solid #e5e7eb;
+  margin: 3rem 0;
+  height: 1px;
+  clear: both;
+}
+
+/* Ensure horizontal rules are visible and properly spaced */
+.prose hr,
+.prose > hr {
+  border: none;
+  border-top: 2px solid #e5e7eb;
+  margin: 3rem 0;
+  height: 1px;
+  clear: both;
+}
+
+/* Footnote styles */
+.prose .footnote {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.prose .footnote p {
+  margin-bottom: 0.5rem;
+}
+
+/* Ensure proper spacing between content and footnotes */
+.prose > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Additional spacing for content before footnotes */
+.prose p + hr {
+  margin-top: 2rem;
+}
+
+/* Ensure footnotes have proper spacing */
+.prose hr + p,
+.prose hr + div {
+  margin-top: 2rem;
 }

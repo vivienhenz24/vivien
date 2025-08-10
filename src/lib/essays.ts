@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
+import remarkGfm from 'remark-gfm'
 
 const essaysDirectory = path.join(process.cwd(), 'src/content/essays')
 
@@ -31,6 +32,7 @@ export function getEssayById(id: string): Essay | null {
     
     // Use remark to convert markdown into HTML string
     const processedContent = remark()
+      .use(remarkGfm)
       .use(html)
       .processSync(matterResult.content)
     const contentHtml = processedContent.toString()
@@ -68,6 +70,13 @@ export function getAllEssays(): Essay[] {
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents)
     
+    // Use remark to convert markdown into HTML string
+    const processedContent = remark()
+      .use(remarkGfm)
+      .use(html)
+      .processSync(matterResult.content)
+    const contentHtml = processedContent.toString()
+    
     // Format date as "Month Year"
     const date = new Date(matterResult.data.date)
     const formattedDate = date.toLocaleDateString('en-US', { 
@@ -81,7 +90,7 @@ export function getAllEssays(): Essay[] {
       title: matterResult.data.title,
       date: formattedDate,
       content: matterResult.content,
-      htmlContent: '', // We don't need HTML for the list view
+      htmlContent: contentHtml,
     }
   })
   
