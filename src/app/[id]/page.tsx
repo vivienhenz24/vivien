@@ -18,12 +18,12 @@ export default async function EssayPage({
     <div className="min-h-screen p-8">
       <div className="max-w-3xl mx-auto">
         <Link href="/" className="text-blue-600 hover:underline mb-8 inline-block">
-          ← back to essays
+          ← back
         </Link>
         
         <article className="prose prose-lg max-w-none">
           <div className="mb-8">
-            <div className="text-2xl text-black font-semibold mb-2">{essay.title}</div>
+            <div className="text-xl text-black font-semibold mb-2">{essay.title}</div>
             <time className="text-gray-600 text-sm">{essay.date}</time>
           </div>
           
