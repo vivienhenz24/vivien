@@ -148,3 +148,19 @@ body {
 .prose hr + div {
   margin-top: 2rem;
 }
+
+/* Add extra spacing between essay content and notes section */
+.essay-content hr {
+  margin: 4rem 0;
+}
+
+.essay-content hr + * {
+  margin-top: 3rem;
+}
+
+/* Style the notes section to have more visual separation */
+.essay-content hr + p,
+.essay-content hr + div {
+  margin-top: 3rem;
+  padding-top: 1rem;
+}

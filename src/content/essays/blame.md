@@ -22,7 +22,7 @@ Here’s one thing college is not valuable for: preparing students for a real jo
 
 Now here’s the part where investment banks come in. They ruined everything. An entry-level job at Goldman Sachs pays $120,000 a year. Now imagine you’re a freshman and you just stepped foot on campus, you know that Goldman starts recruiting in twelve months. So if you’re going to want food on your plate after you graduate, you better start worrying about it now. 
 
-Now you’re making decisions based on what will increase your likelihood of getting that job, and what do companies look for in candidates, those that are the most prepared. And didn’t we just say that college was useless at preparing students for real jobs…
+Now you’re making decisions based on what will increase your likelihood of getting that job, and  companies look for candidates that are most prepared for the job, so you better go and use college as a way to prepare yourself for the job. And didn’t we just say that college was useless at preparing students for a real job?
 
 Do you want to know why we haven't had another Facebook at Harvard? Because during his sophomore spring the Mark Zuckerberg of 2018 was chasing a Goldman Sachs internship instead of building Facebook. 
 
@@ -32,9 +32,13 @@ Do you think I’m wrong? Ask yourself this: would I have done things the same w
 
 --- 
 
+
+
+
 [1] And consulting firms, PE firms, quant trading firms, big tech companies etc etc… (it just didn't sound as good if I included everyone) 
 
 [2] I really don’t want to sound reductive here, of course there are so many students that face incredible personal and financial hardships while attending college, and do have to worry about bringing food to their own plate. But brother, we go to Harvard, 96% of students come from families in the top 50% of earners.
+
 
 
 
