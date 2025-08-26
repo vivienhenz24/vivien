@@ -23,7 +23,7 @@ export default async function EssayPage({
         
         <article className="prose prose-lg max-w-none essay-content">
           <div className="mb-8">
-            <div className="text-xl text-black font-semibold mb-2">{essay.title}</div>
+            <div className="text-xl text-black font-normal mb-2">{essay.title}</div>
             <time className="text-gray-600 text-sm">{essay.date}</time>
           </div>
           
