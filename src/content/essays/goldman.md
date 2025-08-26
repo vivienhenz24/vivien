@@ -20,7 +20,7 @@ And that is valuable. Not only for students, who get to learn about themselves a
 
 Early recruitment tore this model down. An entry-level job at Goldman Sachs pays $120,000 a year, and they recruit students during their sophomore year. If you’re a freshman, you know that if you’re going to want food on your plate after you graduate, you better start worrying about it now. 
 
-Now students at college stil get to learn things *but* they have to worry about putting food on their plate at the same time. And that changes everything because it turns college into a four-year interview process. Instead of exploring their interests and working hard on things they like, students now have to focus on signalling employability. The most popular extra-curricular orgs at Harvard are consulting groups, there's no way you can convince me that students are actually thrilled about spending their free time doing this.
+Now students at college still get to learn things *but* they have to worry about putting food on their plate at the same time. And that changes everything because it turns college into a four-year interview process. Instead of exploring their interests and working hard on things they like, students now have to focus on signalling employability. The most popular extra-curricular orgs at Harvard are consulting groups, there's no way you can convince me that students are actually thrilled about spending their free time doing this.
 
 Do you want to know why we haven't had another Facebook at Harvard? Because during his sophomore spring the Mark Zuckerberg of 2018 was chasing a Goldman Sachs internship instead of building Facebook. 
 
