@@ -14,7 +14,7 @@ At college you get to learn things, *and* you don’t need to worry about puttin
 
 Okay that's better. But why is that valuable?
 
-If you have no responsibilities then you have complete freedom over how you choose to spend your time, and therefore what you choose to work on. And when people have the choice, they tend to spend their time working on things they enjoy. Similarly, (because we're still foreced to learn, boohoo) students tend to choose to spend their time learning about things they’re interested in.
+If you have no responsibilities then you have complete freedom over how you choose to spend your time, and therefore what you choose to work on. And when people have the choice, they tend to spend their time working on things they enjoy. Similarly, (because we're still forced to learn, boohoo) students tend to choose to spend their time learning about things they’re interested in.
 
 And that is valuable. Not only for students, who get to learn about themselves and satisfy their intellectual curiosity, but also for you. How? When people work on things they like, they tend to work harder on them. So, if you get a bunch of smart students to work hard on things that they enjoy, sometimes they create things that are valuable to society.
 
