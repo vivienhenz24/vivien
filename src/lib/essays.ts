@@ -13,6 +13,7 @@ export interface Essay {
   date: string
   content: string
   htmlContent: string
+  originalDate: Date
 }
 
 export function getAllEssayIds(): string[] {
@@ -37,9 +38,11 @@ export function getEssayById(id: string): Essay | null {
       .processSync(matterResult.content)
     const contentHtml = processedContent.toString()
     
+    // Parse the original date
+    const originalDate = new Date(matterResult.data.date)
+    
     // Format date as "Month Year"
-    const date = new Date(matterResult.data.date)
-    const formattedDate = date.toLocaleDateString('en-US', { 
+    const formattedDate = originalDate.toLocaleDateString('en-US', { 
       year: 'numeric', 
       month: 'long' 
     })
@@ -51,6 +54,7 @@ export function getEssayById(id: string): Essay | null {
       date: formattedDate,
       content: matterResult.content,
       htmlContent: contentHtml,
+      originalDate: originalDate,
     }
   } catch {
     return null
@@ -77,9 +81,11 @@ export function getAllEssays(): Essay[] {
       .processSync(matterResult.content)
     const contentHtml = processedContent.toString()
     
-    // Format date as "Month Year"
-    const date = new Date(matterResult.data.date)
-    const formattedDate = date.toLocaleDateString('en-US', { 
+    // Parse the original date for sorting
+    const originalDate = new Date(matterResult.data.date)
+    
+    // Format date as "Month Year" for display
+    const formattedDate = originalDate.toLocaleDateString('en-US', { 
       year: 'numeric', 
       month: 'long' 
     })
@@ -91,15 +97,13 @@ export function getAllEssays(): Essay[] {
       date: formattedDate,
       content: matterResult.content,
       htmlContent: contentHtml,
+      // Store original date for sorting
+      originalDate: originalDate,
     }
   })
   
-  // Sort essays by date
+  // Sort essays by date (newest first)
   return allEssaysData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1
-    } else {
-      return -1
-    }
+    return b.originalDate.getTime() - a.originalDate.getTime()
   })
 } 

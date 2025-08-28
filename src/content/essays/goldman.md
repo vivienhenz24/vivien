@@ -6,7 +6,9 @@ date: "2025-08-15"
 
 The perceived value of a college degree has decreased in recent years. Here's the reason: some companies will now recruit college students as early as their sophomore year. I'm looking at you investment banks [1]. 
 
-Before I explain myself, let me tell you why I think college is valuable. Here it is: at college, you get to learn things. 
+Before I explain myself, let me tell you why I think college is valuable:
+
+At college, you get to learn things. 
 
 Alright yes that’s valuable but you don’t need to attend college to learn things. Is there anything else? 
 
@@ -20,11 +22,14 @@ And that is valuable. Not only for students, who get to learn about themselves a
 
 Early recruitment tore this model down. An entry-level job at Goldman Sachs pays $120,000 a year, and they recruit students during their sophomore year. If you’re a freshman, you know that if you’re going to want food on your plate after you graduate, you better start worrying about it now. 
 
-Now students at college still get to learn things *but* they have to worry about putting food on their plate at the same time. And that changes everything because it turns college into a four-year interview process. Instead of exploring their interests and working hard on things they like, students now have to focus on signalling employability. The most popular extra-curricular orgs at Harvard are consulting groups, there's no way you can convince me that students are actually thrilled about spending their free time doing this.
+Now students at college still get to learn things *but* they have to worry about putting food on their plate. And that changes everything because it turns college into a four-year interview process. 
+
+Instead of exploring their interests and working hard on things they like, students now have to focus on signalling employability. The most popular extra-curricular organisations at Harvard are consulting groups, there's no way you can convince me that students are actually thrilled about spending their free time doing this.
 
 Do you want to know why we haven't had another Facebook at Harvard? Because during his sophomore spring the Mark Zuckerberg of 2018 was chasing a Goldman Sachs internship instead of building Facebook. 
 
 Do you think I'm wrong? Ask yourself this: would I have done things the same way if I truly didn't have to worry about getting a job until *after* I was done with school? You have your answer. 
+
 
 --- 
 
