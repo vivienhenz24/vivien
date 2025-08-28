@@ -24,7 +24,9 @@ Early recruitment tore this model down. An entry-level job at Goldman Sachs pays
 
 Now students at college still get to learn things *but* they have to worry about putting food on their plate. And that changes everything because it turns college into a four-year interview process. 
 
-Instead of exploring their interests and working hard on things they like, students now have to focus on signalling employability. The most popular extra-curricular organisations at Harvard are consulting groups, there's no way you can convince me that students are actually thrilled about spending their free time doing this.
+Instead of exploring their interests and working hard on things they like, students now have to focus on signalling employability. This could explain why the most popular extra-curricular organisations at Harvard are consulting groups.
+
+There's no way you can convince me that students are actually thrilled about spending their free time on *consulting*.
 
 Do you want to know why we haven't had another Facebook at Harvard? Because during his sophomore spring the Mark Zuckerberg of 2018 was chasing a Goldman Sachs internship instead of building Facebook. 
 
