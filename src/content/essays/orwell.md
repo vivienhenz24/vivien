@@ -3,6 +3,8 @@ title: "Orwellian writing"
 date: "2025-08-27"
 ---
 
+THIS IS STILL A DRAFT
+
 When I was a teenager, I starting reading George Orwell's 1984 at 6pm on a Monday, and I was done by 4am on the tuesday. I devoured that book.
 
 This had never happened to me before with books. Firstly because my attention span was already fried so theres no way id be able to focus on something for so long, thank you tiktok, and secondly because i was a very good boy and pulling an all-nighter was a no no.
