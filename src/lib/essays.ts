@@ -102,8 +102,13 @@ export function getAllEssays(): Essay[] {
     }
   })
   
+  // Filter out specific essays that should not be displayed
+  const filteredEssays = allEssaysData.filter(essay => 
+    essay.id !== 'orwell' && essay.id !== 'betweenthelines'
+  )
+  
   // Sort essays by date (newest first)
-  return allEssaysData.sort((a, b) => {
+  return filteredEssays.sort((a, b) => {
     return b.originalDate.getTime() - a.originalDate.getTime()
   })
 } 
