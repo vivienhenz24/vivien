@@ -1,5 +1,5 @@
 ---
-title: "Blame it on Goldman"
+title: "Blame it on goldman"
 date: "2025-08-15"
 ---
 
