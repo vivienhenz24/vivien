@@ -23,7 +23,7 @@ We didn’t think Adolf Hitler would actually try to exterminate the Jewish peop
 
 So when he began sending them to camps, we did nothing.
 
-If only we had realized what was going on, we might have stood up to Adolf Hitler and prevented the atrocities that followed. We could have been on the right side of history [7].
+If only we had realized what was going on, we might have stood up to Adolf Hitler and prevented the atrocities that followed. We should have been on the right side of history [7].
 
 
 
