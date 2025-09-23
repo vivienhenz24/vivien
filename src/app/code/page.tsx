@@ -10,7 +10,7 @@ export default function Code() {
         <h1 className="text-3xl font-normal mb-8">Vivien Henz</h1>
         
         <p className="text-gray-700 mb-8 max-w-xl">
-          Here are my coding projects. If you'd rather read essays, click{' '}
+          Here are my coding projects. If you&apos;d rather read essays, click{' '}
           <Link href="/" className="text-blue-600 underline hover:text-blue-800">
             here
           </Link>
