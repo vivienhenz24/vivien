@@ -3,7 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Vivien Henz",
+  title: "I hope you enjoy these",
   description: "just a diary",
   icons: {
     icon: '/favicon.svg',
