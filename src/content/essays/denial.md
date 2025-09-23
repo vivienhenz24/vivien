@@ -17,7 +17,7 @@ We didn’t think Adolf Hitler would try to control what people learned. But if 
 
 We didn't think Adolf Hitler would end up controlling the media. But from the start, he made the press his enemy. Throughout his rise to power, he called journalists liars, irresponsible, and accused them of weakening Germany. When the Reichtag [4] burned, Hitler seized the crisis to blame it on left-wing radicals, and within weeks had tightened censorship and bent opposing media organisations to his will. It all happened so fast, so we did nothing.
 
-We didn’t think Adolf Hitler would actually try to exterminate the Jewish people. Even though he spelled it all out in Mein Kampf [5]. And in his speeches when he promised to root Germany out of "aliens" — referring to Jews — we didn't pay attention because, remember, his speaking-style was so distracting that we couldn't really take him seriously.
+We didn’t think Adolf Hitler would actually try to exterminate the Jewish people. Even though he spelled it all out in Mein Kampf [5]. And in his speeches when he promised to root Germany out of "aliens" — referring to Jews — we didn't pay attention because, remember, his speaking-style was so distracting we couldn't take him seriously.
 
 So when he began sending them to camps, we did nothing.
 
