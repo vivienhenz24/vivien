@@ -17,11 +17,11 @@ We didn’t think Adolf Hitler would try to control what people learned. But if 
 
 We didn't think Adolf Hitler would end up controlling the media. But from the start, he made the press his enemy. Throughout his rise to power, he called journalists liars, irresponsible, and accused them of weakening Germany. When the Reichtag [4] burned, Hitler seized the crisis to blame it on left-wing radicals, and within weeks had tightened censorship and bent opposing media organisations to his will. It all happened so fast, so we did nothing.
 
-We didn’t think Adolf Hitler would actually try to exterminate the Jewish people. Even though he spelled it all out in Mein Kampf [5]. And in his speeches when he promised to root Germany out of "aliens" — referring to Jews — we didn't pay attention because, remember, his speaking-style was so distracting we couldn't take him seriously.
+We didn’t think Adolf Hitler would actually try to exterminate the Jewish people. Even though he spelled it all out in Mein Kampf [5]. And in his speeches when he promised to root Germany out of "aliens", we didn't pay attention because, remember, his speaking-style was so distracting we couldn't take him seriously.
 
-So when he began sending them to camps, we did nothing.
+So when he sent them to the camps, we did nothing.
 
-If only we had realized what was going on, we might have stood up to Adolf Hitler and prevented the atrocities that followed. We should have been on the right side of history [7].
+If only we had realized what was going on, we might have stood up to Adolf Hitler and prevented the atrocities that followed. We should have been on the right side of history.
 
 
 
@@ -39,9 +39,6 @@ If only we had realized what was going on, we might have stood up to Adolf Hitle
 
 [4] Germany's Parliament.
 
-[5] "My Fight".
+[5] "My Fight". Hitler's manifesto.
 
-[6] https://www.vox.com/2015/2/11/8016017/ny-times-hitler
-
-[7] History tends to repeat itself.
 
