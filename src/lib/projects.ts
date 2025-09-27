@@ -9,6 +9,12 @@ export interface Project {
 // You can add your GitHub projects here
 const projects: Project[] = [
   {
+    id: 'transformer-candle',
+    title: 'Building a transformer from scratch',
+    url: 'https://github.com/vivienhenz24/transformer_candle',
+    date: '2025-01-01'
+  },
+  {
     id: 'tostendout',
     title: 'tostendout',
     url: 'https://tostendout.com',
@@ -19,6 +25,12 @@ const projects: Project[] = [
     title: 'cmdr',
     url: 'https://github.com/vivienhenz24/cmdr',
     date: '2024-07-05'
+  },
+  {
+    id: 'parsed',
+    title: 'parsed',
+    url: 'https://apps.apple.com/tn/app/parsed/id6743483636',
+    date: '2024-01-01'
   }
   // Add more projects here...
 ]
