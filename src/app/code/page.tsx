@@ -21,14 +21,12 @@ export default function Code() {
         <div className="space-y-3">
           {projects.map((project) => (
             <div key={project.id}>
-              <a 
-                href={project.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <Link 
+                href={`/code/${project.id}`}
                 className="text-blue-600 underline hover:text-blue-800"
               >
                 {project.title}
-              </a>
+              </Link>
             </div>
           ))}
         </div>
