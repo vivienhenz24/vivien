@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import { getAllEssays } from '@/lib/essays'
+import { getAllContent } from '@/lib/content'
 
 export default function Home() {
-  const essays = getAllEssays()
+  const content = getAllContent()
 
   return (
     <div className="min-h-screen p-8">
@@ -10,26 +10,22 @@ export default function Home() {
         <h1 className="text-3xl font-normal mb-8">Vivien Henz</h1>
         
         <p className="text-gray-700 mb-8 max-w-xl">
-          Here are my essays. If you&apos;d rather read code, click{' '}
-          <Link href="/code" className="text-blue-600 underline hover:text-blue-800">
-            here
-          </Link>
-          .
+          Here are my essays and coding projects.
         </p>
         
         <div className="space-y-3">
-          {essays.map((essay) => (
-            <div key={essay.id}>
-              <Link href={`/${essay.id}`} className="text-blue-600 underline hover:text-blue-800">
-                {essay.title}
+          {content.map((item) => (
+            <div key={item.id}>
+              <Link href={`/${item.id}`} className="text-blue-600 underline hover:text-blue-800">
+                {item.title}
               </Link>
             </div>
           ))}
         </div>
         
-        {essays.length === 0 && (
+        {content.length === 0 && (
           <p className="text-gray-500 text-center py-8">
-            No essays yet. Add some markdown files to the src/content/essays directory.
+            No content yet. Add some essays or projects.
           </p>
         )}
       </div>

@@ -1,16 +1,16 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getEssayById } from '@/lib/essays'
+import { getContentById } from '@/lib/content'
 
-export default async function EssayPage({
+export default async function ContentPage({
   params,
 }: {
   params: Promise<{ id: string }>
 }) {
   const { id } = await params
-  const essay = getEssayById(id)
+  const content = getContentById(id)
 
-  if (!essay) {
+  if (!content) {
     notFound()
   }
 
@@ -23,14 +23,23 @@ export default async function EssayPage({
         
         <article className="prose prose-lg max-w-none essay-content">
           <div className="mb-8">
-            <div className="text-xl text-black font-normal mb-2">{essay.title}</div>
-            <time className="text-gray-600 text-sm">{essay.date}</time>
+            <div className="text-xl text-black font-normal mb-2">{content.title}</div>
+            <time className="text-gray-600 text-sm">{content.date}</time>
           </div>
           
-          <div 
-            className="leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: essay.htmlContent }}
-          />
+          {content.type === 'essay' && content.htmlContent && (
+            <div 
+              className="leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: content.htmlContent }}
+            />
+          )}
+          
+          {content.type === 'project' && content.description && (
+            <div 
+              className="leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: content.description }}
+            />
+          )}
         </article>
       </div>
     </div>

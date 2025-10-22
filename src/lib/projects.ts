@@ -19,9 +19,23 @@ const projects: Project[] = [
   {
     id: 'parsed',
     title: 'Parsed',
-    description: 'My first big coding project, a mobile app that gives you the five most important news headlines of the day, articles about these headlines written by newspapers from all over the political spectrum. And a bias analysis for each news item presented to you. 2500+ downloads as of today :) <br><br><a href="https://apps.apple.com/tn/app/parsed/id6743483636" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">Download on the App Store →</a>',
+    description: 'My first big coding project, a mobile app that gives you the five most important news headlines of the day, articles about these headlines written by newspapers from all over the political spectrum. And a bias analysis for each news item presented to you. 2500+ downloads as of today :) Availaible on the app store.<br><br><a href="https://apps.apple.com/tn/app/parsed/id6743483636" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">Download on the App Store →</a>',
     url: 'https://apps.apple.com/tn/app/parsed/id6743483636',
     date: '2025-03-29'
+  },
+  {
+    id: 'audio-steganography',
+    title: 'Hiding a secret message inside an audio file',
+    description: '',
+    url: '/audio-steganography',
+    date: '2025-10-17'
+  },
+  {
+    id: 'luxembourgish-tts',
+    title: 'Luxembourgish text-to-speech',
+    description: 'Available at <a href="https://neiom.io" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">neiom.io</a>',
+    url: '/luxembourgish-tts',
+    date: '2025-10-17'
   }
   // Add more projects here...
 ]
