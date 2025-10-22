@@ -28,14 +28,14 @@ const projects: Project[] = [
     title: 'Hiding a secret message inside an audio file',
     description: '',
     url: '/audio-steganography',
-    date: '2025-10-17'
+    date: '2025-10-01'
   },
   {
     id: 'luxembourgish-tts',
     title: 'Luxembourgish text-to-speech',
     description: 'Available at <a href="https://neiom.io" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">neiom.io</a>',
     url: '/luxembourgish-tts',
-    date: '2025-10-17'
+    date: '2025-10-15'
   }
   // Add more projects here...
 ]

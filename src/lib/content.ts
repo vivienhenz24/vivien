@@ -28,15 +28,23 @@ function essaysToContentItems(essays: Essay[]): ContentItem[] {
 
 // Convert projects to unified content items
 function projectsToContentItems(projects: Project[]): ContentItem[] {
-  return projects.map(project => ({
-    id: project.id,
-    title: project.title,
-    date: project.date || '',
-    type: 'project' as const,
-    description: project.description,
-    url: project.url,
-    originalDate: project.date ? new Date(project.date).toISOString() : new Date().toISOString()
-  }))
+  return projects.map(project => {
+    const projectDate = project.date ? new Date(project.date) : new Date()
+    const formattedDate = projectDate.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long' 
+    })
+    
+    return {
+      id: project.id,
+      title: project.title,
+      date: formattedDate,
+      type: 'project' as const,
+      description: project.description,
+      url: project.url,
+      originalDate: project.date ? new Date(project.date).toISOString() : new Date().toISOString()
+    }
+  })
 }
 
 // Get all content items (essays + projects) sorted by date
