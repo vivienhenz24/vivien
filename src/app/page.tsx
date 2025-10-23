@@ -12,7 +12,7 @@ export default function Home() {
         <p className="text-gray-700 mb-8 max-w-xl">
           Hi! I like to work hard on things I find interesting. So here are my essays and coding projects about them, which I hope you find interesting too.
           <br /><br />
-          Let&apos;s connect on <a href="https://github.com/vivienhenz24" className="text-blue-600 underline hover:text-blue-800">GitHub</a>, <a href="https://linkedin.com/in/vivienhenz" className="text-blue-600 underline hover:text-blue-800">linkedIn</a>, or vhenz[at]college[dot]harvard[dot]edu.
+          Let&apos;s connect on <a href="https://github.com/vivienhenz24" className="text-blue-600 underline hover:text-blue-800">GitHub</a>, <a href="https://linkedin.com/in/vivienhenz" className="text-blue-600 underline hover:text-blue-800">linkedIn</a>, or vhenz@college.harvard.edu.
         </p>
         
         <div className="space-y-3">
