@@ -1,5 +1,5 @@
 ---
-title: "Encoding a Secret Message in Sound Waves"
+title: "Encoding a secret message in sound waves"
 description: "Using Fourier transform (frequency domain coefficient embedding) to hide a secret message in audio files"
 url: "https://github.com/vivienhenz24/phys_15C_lab_proj"
 date: "2025-10-19"
