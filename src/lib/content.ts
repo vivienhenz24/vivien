@@ -1,93 +1,41 @@
-import { getAllEssays, Essay } from './essays'
-import { getAllProjects, Project } from './projects'
+import { getAllEssays } from './essays'
+import { getAllProjects } from './projects'
 
 export interface ContentItem {
   id: string
   title: string
   date: string
   type: 'essay' | 'project'
-  content?: string
-  htmlContent?: string
-  description?: string
-  url?: string
-  originalDate: string // ISO string for sorting
+  htmlContent: string
+  originalDate: string
 }
 
-// Convert essays to unified content items
-function essaysToContentItems(essays: Essay[]): ContentItem[] {
-  return essays.map(essay => ({
-    id: essay.id,
-    title: essay.title,
-    date: essay.date,
-    type: 'essay' as const,
-    content: essay.content,
-    htmlContent: essay.htmlContent,
-    originalDate: essay.originalDate
-  }))
-}
-
-// Convert projects to unified content items
-function projectsToContentItems(projects: Project[]): ContentItem[] {
-  return projects.map(project => {
-    const projectDate = project.date ? new Date(project.date) : new Date()
-    const formattedDate = projectDate.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long' 
-    })
-    
-    return {
-      id: project.id,
-      title: project.title,
-      date: formattedDate,
-      type: 'project' as const,
-      description: project.description,
-      url: project.url,
-      originalDate: project.date ? new Date(project.date).toISOString() : new Date().toISOString()
-    }
-  })
-}
-
-// Get all content items (essays + projects) sorted by date
+// Get all content (essays + projects) sorted by date
 export function getAllContent(): ContentItem[] {
   const essays = getAllEssays()
   const projects = getAllProjects()
   
-  const essayItems = essaysToContentItems(essays)
-  const projectItems = projectsToContentItems(projects)
+  // Both essays and projects already have the same structure
+  const allContent = [
+    ...essays.map(e => ({ ...e, type: 'essay' as const })),
+    ...projects.map(p => ({ ...p, type: 'project' as const }))
+  ]
   
-  const allContent = [...essayItems, ...projectItems]
-  
-  return allContent.sort((a, b) => {
-    return new Date(b.originalDate).getTime() - new Date(a.originalDate).getTime()
-  })
+  return allContent.sort((a, b) => 
+    new Date(b.originalDate).getTime() - new Date(a.originalDate).getTime()
+  )
 }
 
-// Get content item by ID (searches both essays and projects)
+// Get content by ID (searches both essays and projects)
 export function getContentById(id: string): ContentItem | null {
   const essays = getAllEssays()
   const projects = getAllProjects()
   
-  // Check essays first
   const essay = essays.find(e => e.id === id)
-  if (essay) {
-    return essaysToContentItems([essay])[0]
-  }
+  if (essay) return { ...essay, type: 'essay' as const }
   
-  // Check projects
   const project = projects.find(p => p.id === id)
-  if (project) {
-    return projectsToContentItems([project])[0]
-  }
+  if (project) return { ...project, type: 'project' as const }
   
   return null
 }
-
-// Get all content IDs
-export function getAllContentIds(): string[] {
-  const content = getAllContent()
-  return content.map(item => item.id)
-}
-
-// Legacy functions for backward compatibility
-export { getAllEssays, getEssayById, getAllEssayIds } from './essays'
-export { getAllProjects, getProjectById } from './projects'

@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "prebuild": "node scripts/build-essays.js",
+    "prebuild": "node scripts/build-essays.js && node scripts/build-projects.js",
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx --report-unused-disable-directives",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
-    "create-essay": "node scripts/create-essay.js"
+    "create-essay": "node scripts/create-essay.js",
+    "create-project": "node scripts/create-project.js",
+    "build-projects": "node scripts/build-projects.js"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
