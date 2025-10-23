@@ -7,6 +7,6 @@ date: "2025-03-29"
 
 Parsed was the first mobile app I ever made. Obviously it wasn't something people wanted, but it taught me a lot and I don't regret one bit of spending two months building this thing. 
 
-2500 downloads.
+2500 downloads 
 
 [Download on the App Store →](https://apps.apple.com/tn/app/parsed/id6743483636)
