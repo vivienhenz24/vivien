@@ -27,10 +27,12 @@ export default async function ContentPage({
             <time className="text-gray-600 text-sm">{content.date}</time>
           </div>
           
-          <div 
-            className="leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: content.htmlContent }}
-          />
+          {content.htmlContent && (
+            <div 
+              className="leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: content.htmlContent }}
+            />
+          )}
         </article>
       </div>
     </div>

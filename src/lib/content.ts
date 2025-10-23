@@ -6,7 +6,7 @@ export interface ContentItem {
   title: string
   date: string
   type: 'essay' | 'project'
-  htmlContent: string
+  htmlContent?: string
   originalDate: string
 }
 
