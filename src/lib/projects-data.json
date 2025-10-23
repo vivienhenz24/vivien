@@ -1,5 +1,15 @@
 [
   {
+    "id": "audio-steganography",
+    "title": "Encoding a Secret Message in Sound Waves",
+    "description": "Using Fourier transform (frequency domain coefficient embedding) to hide a secret message in audio files",
+    "url": "https://github.com/vivienhenz24/phys_15C_lab_proj",
+    "date": "October 2025",
+    "content": "\nA Python implementation of audio steganography using Fourier transforms to embed secret messages in sound waves by manipulating frequency domain coefficients.\n\n[View on GitHub →](https://github.com/vivienhenz24/phys_15C_lab_proj)\n\n",
+    "htmlContent": "<p>A Python implementation of audio steganography using Fourier transforms to embed secret messages in sound waves by manipulating frequency domain coefficients.</p>\n<p><a href=\"https://github.com/vivienhenz24/phys_15C_lab_proj\">View on GitHub →</a></p>\n",
+    "originalDate": "2025-10-19T04:00:00.000Z"
+  },
+  {
     "id": "luxembourgish-tts",
     "title": "Luxembourgish text-to-speech",
     "description": "A text-to-speech system for the Luxembourgish language, making digital content accessible to Luxembourgish speakers.",
