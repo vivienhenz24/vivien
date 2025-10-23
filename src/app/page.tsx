@@ -10,7 +10,9 @@ export default function Home() {
         <h1 className="text-3xl font-normal mb-8">Vivien Henz</h1>
         
         <p className="text-gray-700 mb-8 max-w-xl">
-          Here are my essays and coding projects.
+         Hi! I like to work hard on things I find interesting. Here are my essays and coding projects, which I hope you find interesting too.
+   
+          
         </p>
         
         <div className="space-y-3">
