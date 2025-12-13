@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@fuzzycanary/core':
+        specifier: ^0.1.3
+        version: 0.1.3
       '@vercel/analytics':
         specifier: ^1.5.0
         version: 1.5.0(next@16.0.7(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
@@ -120,6 +123,9 @@ packages:
   '@eslint/plugin-kit@0.3.4':
     resolution: {integrity: sha512-Ul5l+lHEcw3L5+k8POx6r74mxEYKG5kOb6Xpy2gCRW6zweT6TEhAf8vhxGgjhqrd/VO/Dirhsb+1hNpD1ue9hw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@fuzzycanary/core@0.1.3':
+    resolution: {integrity: sha512-NnePIOPWcYen8dytK5pbyWUFARiUzxpX8mP8YkIDRwpyYXYf79xfrS+P4zDzSd8t6obWBI8upznDFA3V5jkIHg==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2216,6 +2222,8 @@ snapshots:
     dependencies:
       '@eslint/core': 0.15.1
       levn: 0.4.1
+
+  '@fuzzycanary/core@0.1.3': {}
 
   '@humanfs/core@0.19.1': {}
 
