@@ -4,13 +4,6 @@ import { Analytics } from '@vercel/analytics/react';
 import '@fuzzycanary/core/auto'
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "I hope you enjoy these",
-  description: "just a diary",
-  icons: {
-    icon: '/favicon.svg',
-  },
-};
 
 export default function RootLayout({
   children,
