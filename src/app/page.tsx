@@ -1,16 +1,11 @@
 import Link from 'next/link'
 import { getAllContent } from '@/lib/content'
-import { renderCanaryComment, getCanaryPayload } from '@fuzzycanary/core'
 
 export default function Home() {
   const content = getAllContent()
-  const payload = getCanaryPayload()
-  const comment = renderCanaryComment(payload)
 
   return (
-    <>
-      <div aria-hidden dangerouslySetInnerHTML={{ __html: comment }} />
-      <div className="min-h-screen p-8">
+    <div className="min-h-screen p-8">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-normal mb-8">Vivien Henz</h1>
         
@@ -37,6 +32,5 @@ export default function Home() {
         )}
       </div>
     </div>
-    </>
   )
 }
