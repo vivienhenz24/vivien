@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@fuzzycanary/core':
-        specifier: ^0.1.9
-        version: 0.1.9(react@19.1.0)
+        specifier: ^0.2.0
+        version: 0.2.0(react@19.1.0)
       '@vercel/analytics':
         specifier: ^1.6.1
         version: 1.6.1(next@16.0.10(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
@@ -117,8 +117,8 @@ packages:
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@fuzzycanary/core@0.1.9':
-    resolution: {integrity: sha512-DM6Vtcz1EXvtYVaid+0GvwB5b41swSvRsjvs8e3EFbKPzblc+qX7NdAE74IeRlsXPIDDO/UzDgOlutiie+bRyA==}
+  '@fuzzycanary/core@0.2.0':
+    resolution: {integrity: sha512-2utPiaam90r7HLmrDKAuEQ1e+Eb58oZBO9Gp0UrMuXVSw7ZoBFVoLLG5T3HYAAosnANB4WhC0IUUqWb24PZg4w==}
     peerDependencies:
       react: '>=16.8.0'
     peerDependenciesMeta:
@@ -2178,7 +2178,7 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@fuzzycanary/core@0.1.9(react@19.1.0)':
+  '@fuzzycanary/core@0.2.0(react@19.1.0)':
     optionalDependencies:
       react: 19.1.0
 
