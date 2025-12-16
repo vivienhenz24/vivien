@@ -1,6 +1,6 @@
 ---
 title: "Stopping AI scraping bots"
-date: "2025-10-15"
+date: "2025-12-01"
 ---
 
 Alright so if you run a self-hosted blog, you've probably noticed AI companies scraping it for training data. And not just a little (RIP to your server bill).
