@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@fuzzycanary/core':
-        specifier: ^0.1.4
-        version: 0.1.4
+        specifier: ^0.1.5
+        version: 0.1.5(react@19.1.0)
       '@vercel/analytics':
         specifier: ^1.6.1
         version: 1.6.1(next@16.0.10(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
@@ -117,8 +117,13 @@ packages:
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@fuzzycanary/core@0.1.4':
-    resolution: {integrity: sha512-2qTDkWMheZZTsp0jAspVjWdby0vttU6TST0Qo6lDuoTiwR36l1Nt6CX9Up8qnU39ERvrznWInsL453lhnxfdpA==}
+  '@fuzzycanary/core@0.1.5':
+    resolution: {integrity: sha512-NLh+ZytyPx1TZLlwyS0ySWwJ99BfrGHQ0AzxcvAzFpRjFguOkTAO7yAbqPrJzu7oEFxNgQc3TDc8pwzFghqvpQ==}
+    peerDependencies:
+      react: '>=16.8.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2173,7 +2178,9 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@fuzzycanary/core@0.1.4': {}
+  '@fuzzycanary/core@0.1.5(react@19.1.0)':
+    optionalDependencies:
+      react: 19.1.0
 
   '@humanfs/core@0.19.1': {}
 

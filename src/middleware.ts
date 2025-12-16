@@ -1,12 +1,7 @@
 import { NextResponse } from 'next/server'
-import { getCanaryPayload, getCanaryHeader } from '@fuzzycanary/core'
 
 export function middleware() {
-  const payload = getCanaryPayload()
-  const { name, value } = getCanaryHeader(payload)
-  const res = NextResponse.next()
-  res.headers.set(name, value)
-  return res
+  return NextResponse.next()
 }
 
 export const config = {

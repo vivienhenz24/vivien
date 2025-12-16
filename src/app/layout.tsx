@@ -1,7 +1,6 @@
 
 import type { Metadata } from "next";
-import { renderCanaryComment, getCanaryPayload } from '@fuzzycanary/core'
-import '@fuzzycanary/core/auto'
+import { Canary } from '@fuzzycanary/core/react'
 import "./globals.css";
 import AnalyticsWrapper from './analytics'
 
@@ -18,19 +17,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const payload = getCanaryPayload()
-  const comment = renderCanaryComment(payload)
-
   return (
     <html lang="en">
       <body className="antialiased text-gray-900">
-        {/* Canary comment - Beautiful Soup can find this in the HTML */}
-        <div 
-          aria-hidden 
-          style={{ display: 'none' }}
-          data-canary-comment
-          dangerouslySetInnerHTML={{ __html: comment }}
-        />
+        <Canary />
         {children}
         <AnalyticsWrapper />
       </body>
