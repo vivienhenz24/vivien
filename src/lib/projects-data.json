@@ -7,7 +7,7 @@
     "date": "October 2025",
     "content": "\nA Rust implementation of audio steganography using Fourier transforms to embed secret messages in sound waves by manipulating frequency domain coefficients. I will make a big blog post explaining everything soon.\n\n[View on GitHub →](https://github.com/vivienhenz24/phys_15C_lab_proj)\n\n",
     "htmlContent": "<p>A Rust implementation of audio steganography using Fourier transforms to embed secret messages in sound waves by manipulating frequency domain coefficients. I will make a big blog post explaining everything soon.</p>\n<p><a href=\"https://github.com/vivienhenz24/phys_15C_lab_proj\">View on GitHub →</a></p>\n",
-    "originalDate": "2025-10-19T04:00:00.000Z"
+    "originalDate": "2025-10-18T22:00:00.000Z"
   },
   {
     "id": "luxembourgish-tts",
@@ -17,7 +17,7 @@
     "date": "October 2025",
     "content": "\nI wanted to use a Luxembourgish text to speech model for some trolling purposes, so I went on Elevenlabs and used theirs...only to find out that it just doesnt work. They say they support Luxembourgish, but I think they don't have anyone at the office that speaks Luxembourgish that can tell them it's complete gibberish. \n\nI thought I could do a better job than that so for my first iteration of a Luxembourgish tts model all I did was fork the open source fish-speech TTS inference pipeline and wrote my own training loop to fine tune it on 32000 recorded Luxembourgish samples. It took 5h on an RTX5090 (~10$). \n\n[Visit neiom.io →](https://neiom.io)\n\n",
     "htmlContent": "<p>I wanted to use a Luxembourgish text to speech model for some trolling purposes, so I went on Elevenlabs and used theirs...only to find out that it just doesnt work. They say they support Luxembourgish, but I think they don't have anyone at the office that speaks Luxembourgish that can tell them it's complete gibberish.</p>\n<p>I thought I could do a better job than that so for my first iteration of a Luxembourgish tts model all I did was fork the open source fish-speech TTS inference pipeline and wrote my own training loop to fine tune it on 32000 recorded Luxembourgish samples. It took 5h on an RTX5090 (~10$).</p>\n<p><a href=\"https://neiom.io\">Visit neiom.io →</a></p>\n",
-    "originalDate": "2025-10-15T04:00:00.000Z"
+    "originalDate": "2025-10-14T22:00:00.000Z"
   },
   {
     "id": "transformer-candle",
@@ -27,7 +27,7 @@
     "date": "September 2025",
     "content": "\nThere's no rational reason for building a transformer in Rust—except that it's fun. It's like the guy that built a transformer using minecraft redstone, except lamer.\n\n\n[View on GitHub →](https://github.com/vivienhenz24/transformer_candle)\n",
     "htmlContent": "<p>There's no rational reason for building a transformer in Rust—except that it's fun. It's like the guy that built a transformer using minecraft redstone, except lamer.</p>\n<p><a href=\"https://github.com/vivienhenz24/transformer_candle\">View on GitHub →</a></p>\n",
-    "originalDate": "2025-09-01T04:00:00.000Z"
+    "originalDate": "2025-08-31T22:00:00.000Z"
   },
   {
     "id": "parsed",
@@ -37,6 +37,6 @@
     "date": "March 2025",
     "content": "\nParsed was the first mobile app I ever made. Obviously it wasn't something people wanted, but it taught me a lot and I don't regret one bit of spending two months building this thing. \n\n2500 downloads \n\n[Download on the App Store →](https://apps.apple.com/tn/app/parsed/id6743483636)\n",
     "htmlContent": "<p>Parsed was the first mobile app I ever made. Obviously it wasn't something people wanted, but it taught me a lot and I don't regret one bit of spending two months building this thing.</p>\n<p>2500 downloads</p>\n<p><a href=\"https://apps.apple.com/tn/app/parsed/id6743483636\">Download on the App Store →</a></p>\n",
-    "originalDate": "2025-03-29T04:00:00.000Z"
+    "originalDate": "2025-03-28T23:00:00.000Z"
   }
 ]
