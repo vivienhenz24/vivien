@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Canary } from '@fuzzycanary/core/react'
 import "./globals.css";
+import 'katex/dist/katex.min.css';
 import AnalyticsWrapper from './analytics'
 
 export const metadata: Metadata = {
