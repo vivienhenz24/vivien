@@ -1,5 +1,5 @@
 ---
-title: "Monte Carlo Geopolitical Contract Pricer"
+title: "Running Monte Carlo Simulations on Prediction Markets"
 description: "A correlated Monte Carlo contract pricer using a Gaussian copula model, applied to 33 real Polymarket events on the Iran/Middle East situation. Implemented in serial C++, OpenMP, MPI, CUDA, and JAX."
 date: "2026-05-07"
 ---
