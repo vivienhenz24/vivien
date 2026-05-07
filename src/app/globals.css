@@ -101,6 +101,32 @@ body {
   color: #1d4ed8;
 }
 
+/* Table styles */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.prose th {
+  text-align: left;
+  font-weight: 600;
+  color: #0c0a09;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.prose td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #292524;
+}
+
+.prose tr:last-child td {
+  border-bottom: none;
+}
+
 /* Horizontal rule styles */
 .prose hr {
   border: none;
