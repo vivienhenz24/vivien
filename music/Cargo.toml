@@ -1,0 +1,8 @@
+[package]
+name = "musical_instrument"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+opencv = { version = "0.96", default-features = false, features = ["clang-runtime", "dnn", "highgui", "imgproc", "videoio"] }
+rodio = "0.19"

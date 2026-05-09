@@ -4,8 +4,6 @@ description: "A fault-tolerant publish-subscribe system built on top of pancy, a
 date: "2026-05-01"
 ---
 
-*CS 2620 — Spring 2026*
-
 ## Introduction
 
 Publish-subscribe (pub/sub) is a way of communication in which producers emit messages on "topics" without knowledge of who is listening, and consumers receive all messages on topics they have subscribed to.

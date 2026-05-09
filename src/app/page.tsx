@@ -25,6 +25,12 @@ export default function Home() {
           ))}
         </div>
         
+        <div className="mt-6 pt-6 border-t border-gray-200">
+          <Link href="/play" className="text-blue-600 underline hover:text-blue-800">
+            Play some music
+          </Link>
+        </div>
+
         {content.length === 0 && (
           <p className="text-gray-500 text-center py-8">
             No content yet. Add some essays or projects.
