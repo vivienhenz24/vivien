@@ -129,6 +129,17 @@ export default function PlayPage() {
           const ctx2d = canvas.getContext('2d')!
           ctx2d.clearRect(0, 0, canvas.width, canvas.height)
 
+          // Midline: above = one octave higher
+          ctx2d.save()
+          ctx2d.setLineDash([6, 6])
+          ctx2d.strokeStyle = 'rgba(148,163,184,0.5)'
+          ctx2d.lineWidth = 1
+          ctx2d.beginPath()
+          ctx2d.moveTo(0, canvas.height / 2)
+          ctx2d.lineTo(canvas.width, canvas.height / 2)
+          ctx2d.stroke()
+          ctx2d.restore()
+
           const W = canvas.width
           const H = canvas.height
           let sawRight = false
@@ -142,7 +153,7 @@ export default function PlayPage() {
             if (isRight) sawRight = true; else sawLeft = true
 
             const wristY  = landmarks[0].y
-            const octave  = wristY < 0.33 ? 2 : wristY < 0.66 ? 1 : 0.5
+            const octave  = wristY < 0.5 ? 2 : 1
             const voiceSet = isRight ? voices.right : voices.left
             const baseSet  = isRight ? RIGHT_BASE    : LEFT_BASE
             const nameSet  = isRight ? RIGHT_NAMES   : LEFT_NAMES
@@ -152,7 +163,7 @@ export default function PlayPage() {
               setFreq(audioCtx, voiceSet[fi], baseSet[fi] * octave)
               if (held) {
                 noteOn(audioCtx, voiceSet[fi])
-                const sup = octave === 2 ? '′' : octave === 0.5 ? ',' : ''
+                const sup = octave === 2 ? '′' : ''
                 notes.push(nameSet[fi] + sup)
               } else {
                 noteOff(audioCtx, voiceSet[fi])
