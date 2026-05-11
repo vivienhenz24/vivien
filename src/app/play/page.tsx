@@ -12,8 +12,7 @@ const LEFT_NAMES  = ['B', 'A', 'G', 'F', 'E']
 const TIPS  = [4, 8, 12, 16, 20]
 const BENDS = [3, 6, 10, 14, 18]
 const AMPLITUDE = 0.22
-const HARM_AMPS = [0.5, 1.0, 0.8, 0.4] // xylophone harmonics
-const HARM_TOTAL = HARM_AMPS.reduce((a, b) => a + b, 0)
+const MAX_HARMONICS = 5
 
 // Skeleton connections for drawing
 const CONNECTIONS: [number, number][] = [
@@ -25,30 +24,83 @@ const CONNECTIONS: [number, number][] = [
   [5,9],[9,13],[13,17],
 ]
 
+interface SoundPreset {
+  name: string
+  harmonics: number[]  // MAX_HARMONICS amplitudes, already normalized
+  attack: number       // setTargetAtTime time constant for note-on
+  release: number      // time constant for note-off
+  pianoMode?: boolean  // attack then slow decay to sustain level while held
+}
+
+function normalizeHarmonics(h: number[]): number[] {
+  const total = h.reduce((a, b) => a + b, 0)
+  return h.map(x => x / total)
+}
+
+const PRESETS: SoundPreset[] = [
+  {
+    name: 'Xylophone',
+    harmonics: normalizeHarmonics([0.5, 1.0, 0.8, 0.4, 0.0]),
+    attack: 0.001,
+    release: 0.033,
+  },
+  {
+    name: 'Piano',
+    harmonics: normalizeHarmonics([1.0, 0.6, 0.4, 0.25, 0.12]),
+    attack: 0.004,
+    release: 0.12,
+    pianoMode: true,
+  },
+  {
+    name: 'Flute',
+    harmonics: normalizeHarmonics([1.0, 0.2, 0.05, 0.0, 0.0]),
+    attack: 0.04,
+    release: 0.05,
+  },
+  {
+    name: 'Organ',
+    harmonics: normalizeHarmonics([0.8, 0.0, 1.0, 0.0, 0.6]),  // 1st + 3rd + 5th partials
+    attack: 0.002,
+    release: 0.002,
+  },
+]
+
 interface Voice {
   oscillators: OscillatorNode[]
+  harmGains: GainNode[]
   envGain: GainNode
   active: boolean
 }
 
-function makeVoice(ctx: AudioContext, freq: number): Voice {
+function makeVoice(ctx: AudioContext, freq: number, preset: SoundPreset): Voice {
   const envGain = ctx.createGain()
   envGain.gain.setValueAtTime(0, ctx.currentTime)
   envGain.connect(ctx.destination)
 
-  const oscillators = HARM_AMPS.map((amp, h) => {
+  const harmGains: GainNode[] = []
+  const oscillators: OscillatorNode[] = []
+
+  for (let h = 0; h < MAX_HARMONICS; h++) {
     const osc = ctx.createOscillator()
     const harmGain = ctx.createGain()
-    harmGain.gain.setValueAtTime(amp / HARM_TOTAL, ctx.currentTime)
+    harmGain.gain.setValueAtTime(preset.harmonics[h] ?? 0, ctx.currentTime)
     osc.type = 'sine'
     osc.frequency.setValueAtTime(freq * (h + 1), ctx.currentTime)
     osc.connect(harmGain)
     harmGain.connect(envGain)
     osc.start()
-    return osc
-  })
+    oscillators.push(osc)
+    harmGains.push(harmGain)
+  }
 
-  return { oscillators, envGain, active: false }
+  return { oscillators, harmGains, envGain, active: false }
+}
+
+function applyPreset(ctx: AudioContext, voice: Voice, preset: SoundPreset) {
+  const now = ctx.currentTime
+  preset.harmonics.forEach((amp, h) => {
+    voice.harmGains[h]?.gain.setTargetAtTime(amp, now, 0.05)
+  })
 }
 
 function setFreq(ctx: AudioContext, voice: Voice, freq: number) {
@@ -57,20 +109,28 @@ function setFreq(ctx: AudioContext, voice: Voice, freq: number) {
   })
 }
 
-function noteOn(ctx: AudioContext, voice: Voice) {
+function noteOn(ctx: AudioContext, voice: Voice, preset: SoundPreset) {
   if (voice.active) return
   voice.active = true
   const now = ctx.currentTime
   voice.envGain.gain.cancelScheduledValues(now)
-  voice.envGain.gain.setTargetAtTime(AMPLITUDE, now, 0.001) // fast attack
+  voice.envGain.gain.setValueAtTime(voice.envGain.gain.value, now)
+  if (preset.pianoMode) {
+    // Fast attack then slow decay to a sustain level — natural piano shape
+    voice.envGain.gain.setTargetAtTime(AMPLITUDE, now, preset.attack)
+    voice.envGain.gain.setTargetAtTime(AMPLITUDE * 0.3, now + 0.06, 0.45)
+  } else {
+    voice.envGain.gain.setTargetAtTime(AMPLITUDE, now, preset.attack)
+  }
 }
 
-function noteOff(ctx: AudioContext, voice: Voice) {
+function noteOff(ctx: AudioContext, voice: Voice, preset: SoundPreset) {
   if (!voice.active) return
   voice.active = false
   const now = ctx.currentTime
   voice.envGain.gain.cancelScheduledValues(now)
-  voice.envGain.gain.setTargetAtTime(0, now, 0.033) // ~200ms ring-out
+  voice.envGain.gain.setValueAtTime(voice.envGain.gain.value, now)
+  voice.envGain.gain.setTargetAtTime(0, now, preset.release)
 }
 
 type Status = 'idle' | 'loading' | 'ready' | 'error'
@@ -80,10 +140,24 @@ export default function PlayPage() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const cleanupRef = useRef<(() => void) | null>(null)
   const activeNotesKeyRef = useRef('')
+  const presetRef = useRef<SoundPreset>(PRESETS[0])
+  const audioCtxRef = useRef<AudioContext | null>(null)
+  const voicesRef = useRef<{ right: Voice[], left: Voice[] } | null>(null)
   const [status, setStatus] = useState<Status>('idle')
   const [activeNotes, setActiveNotes] = useState<string[]>([])
+  const [presetIdx, setPresetIdx] = useState(0)
 
   useEffect(() => () => { cleanupRef.current?.() }, [])
+
+  const switchPreset = (idx: number) => {
+    setPresetIdx(idx)
+    presetRef.current = PRESETS[idx]
+    if (voicesRef.current && audioCtxRef.current) {
+      const ctx = audioCtxRef.current
+      const { right, left } = voicesRef.current
+      ;[...right, ...left].forEach(v => applyPreset(ctx, v, PRESETS[idx]))
+    }
+  }
 
   const start = async () => {
     setStatus('loading')
@@ -105,10 +179,12 @@ export default function PlayPage() {
       })
 
       const audioCtx = new AudioContext()
+      audioCtxRef.current = audioCtx
       const voices = {
-        right: RIGHT_BASE.map(f => makeVoice(audioCtx, f)),
-        left:  LEFT_BASE.map(f => makeVoice(audioCtx, f)),
+        right: RIGHT_BASE.map(f => makeVoice(audioCtx, f, presetRef.current)),
+        left:  LEFT_BASE.map(f => makeVoice(audioCtx, f, presetRef.current)),
       }
+      voicesRef.current = voices
 
       const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } })
       const video = videoRef.current!
@@ -124,6 +200,7 @@ export default function PlayPage() {
       let rafId = 0
       const loop = () => {
         if (video.readyState >= 2 && video.videoWidth > 0) {
+          const preset = presetRef.current
           const result = handLandmarker.detectForVideo(video, performance.now())
           const canvas = canvasRef.current!
           const ctx2d = canvas.getContext('2d')!
@@ -162,11 +239,11 @@ export default function PlayPage() {
               const held = landmarks[tipIdx].y >= landmarks[BENDS[fi]].y
               setFreq(audioCtx, voiceSet[fi], baseSet[fi] * octave)
               if (held) {
-                noteOn(audioCtx, voiceSet[fi])
+                noteOn(audioCtx, voiceSet[fi], preset)
                 const sup = octave === 2 ? '′' : ''
                 notes.push(nameSet[fi] + sup)
               } else {
-                noteOff(audioCtx, voiceSet[fi])
+                noteOff(audioCtx, voiceSet[fi], preset)
               }
             })
 
@@ -191,8 +268,8 @@ export default function PlayPage() {
             })
           })
 
-          if (!sawRight) voices.right.forEach(v => noteOff(audioCtx, v))
-          if (!sawLeft)  voices.left.forEach(v => noteOff(audioCtx, v))
+          if (!sawRight) voices.right.forEach(v => noteOff(audioCtx, v, preset))
+          if (!sawLeft)  voices.left.forEach(v => noteOff(audioCtx, v, preset))
 
           const key = notes.join(',')
           if (key !== activeNotesKeyRef.current) {
@@ -208,6 +285,8 @@ export default function PlayPage() {
         cancelAnimationFrame(rafId)
         handLandmarker.close()
         audioCtx.close()
+        audioCtxRef.current = null
+        voicesRef.current = null
         stream.getTracks().forEach(t => t.stop())
       }
     } catch (e) {
@@ -228,9 +307,25 @@ export default function PlayPage() {
           Right hand: thumb to pinky plays <span className="font-mono">C D E F G</span>.
           Left hand: thumb to pinky plays <span className="font-mono">B A G F E</span>.
         </p>
-        <p className="text-gray-600 mb-6 text-sm">
+        <p className="text-gray-600 mb-4 text-sm">
           Curl a finger down to sound its note. Have fun!
         </p>
+
+        <div className="flex gap-2 mb-6">
+          {PRESETS.map((p, i) => (
+            <button
+              key={p.name}
+              onClick={() => switchPreset(i)}
+              className={`px-3 py-1 text-sm border ${
+                presetIdx === i
+                  ? 'bg-black text-white border-black'
+                  : 'bg-white text-gray-700 border-gray-300 hover:border-gray-500'
+              }`}
+            >
+              {p.name}
+            </button>
+          ))}
+        </div>
 
         {status === 'idle' && (
           <button
