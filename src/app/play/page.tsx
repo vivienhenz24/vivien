@@ -305,7 +305,7 @@ export default function PlayPage() {
         <h1 className="text-2xl font-normal mb-3">Play some music</h1>
         <p className="text-gray-600 mb-1 text-sm leading-relaxed">
           Right hand: thumb to pinky plays <span className="font-mono">C D E F G</span>.
-          Left hand: thumb to pinky plays <span className="font-mono">E F G A B</span>.
+          Left hand: pinky to thumb plays <span className="font-mono">E F G A B</span>.
           Raise your entire palm above the dotted line to raise the notes by an octave.
         </p>
         <p className="text-gray-600 mb-4 text-sm">
