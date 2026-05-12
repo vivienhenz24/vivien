@@ -212,8 +212,8 @@ export default function PlayPage() {
           ctx2d.strokeStyle = 'rgba(148,163,184,0.5)'
           ctx2d.lineWidth = 1
           ctx2d.beginPath()
-          ctx2d.moveTo(0, canvas.height / 2)
-          ctx2d.lineTo(canvas.width, canvas.height / 2)
+          ctx2d.moveTo(0, canvas.height * 0.6)
+          ctx2d.lineTo(canvas.width, canvas.height * 0.6)
           ctx2d.stroke()
           ctx2d.restore()
 
@@ -230,7 +230,7 @@ export default function PlayPage() {
             if (isRight) sawRight = true; else sawLeft = true
 
             const wristY  = landmarks[0].y
-            const octave  = wristY < 0.5 ? 2 : 1
+            const octave  = wristY < 0.6 ? 2 : 1
             const voiceSet = isRight ? voices.right : voices.left
             const baseSet  = isRight ? RIGHT_BASE    : LEFT_BASE
             const nameSet  = isRight ? RIGHT_NAMES   : LEFT_NAMES
