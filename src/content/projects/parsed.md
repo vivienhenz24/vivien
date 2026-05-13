@@ -5,7 +5,7 @@ url: "https://apps.apple.com/tn/app/parsed/id6743483636"
 date: "2025-03-29"
 ---
 
-Parsed was the first mobile app I ever made. Obviously it wasn't something people wanted, but it taught me a lot and I don't regret one bit of spending two months building this thing. 
+Parsed was the first mobile app I ever made. Obviously it wasn't something people wanted, but everyone needs to faceplant once in a while lol.
 
 2500 downloads 
 
