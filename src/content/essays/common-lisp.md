@@ -17,7 +17,7 @@ To my knowledge Common Lisp is the only mainstream language that does all of thi
 
 Lisp stands for "List Processing." In Common Lisp, code is written as lists. For example, (+ 1 2) is a program that adds two numbers, but it's also just a list of three things: the symbol +, and the numbers 1 and 2.
 
-What's interesting is that this is the same kind of list Common Lisp uses to store data, and since the language is built around processing lists all its tools for working with data also work on code. So a program can take another program and change it, for example it can turn (+ 1 2) into (\* 1 2), and run the result right away
+What's interesting is that this is the same kind of list Common Lisp uses to store data, and since the language is built around processing lists all its tools for working with data also work on code. So a program can take another program and change it, for example it can turn (+ 1 2) into (\* 1 2), and run the result right away.
 
 This is what makes macros possible. A macro is a function that takes your code and returns new code in its place, that means you can add new constructs to the language itself.
 
@@ -25,7 +25,7 @@ Once you can add to the language, you can build it up toward your problem. If yo
 
 That matters a lot more now, because what makes a program valuable is the opinions behind it. And we're heading toward a world where software companies let their users change the product themselves, since with an LLM that's easy. So if a company builds a good opinionated domain language for its product, everything its users build on top of it will be much better, because they start from the company's opinions and not from scratch.
 
-Take an ERP. Every company runs a little differently, so almost everyone ends up needing to change it. But if the ERP is written in its own domain language, you can just ask an LLM to make the change in that language. The change will naturally follow the domain language’s underlying opinions, so it fits the product instead of breaking it
+Take an ERP. Every company runs a little differently, so almost everyone ends up needing to change it. But if the ERP is written in its own domain language, you can just ask an LLM to make the change in that language. The change will naturally follow the domain language’s underlying opinions, so it fits the product instead of breaking it.
 
 And it's not just better, it's also cheaper. Lisp programs are often much more concise because macros let you abstract away recurring patterns and make them part of the language itself. So the bigger the program gets, the bigger the difference. In my own experience the apps I've built in Common Lisp end up about six to seven times shorter than the Python versions.
 
@@ -35,7 +35,7 @@ It also means a bigger portion of your program can fit in the LLM's context wind
 
 Common Lisp is an ANSI standard and it hasn't been updated since 1994. I like this feature. And going back to our ERP example, if your users change the product themselves, that's exactly what you want since the language underneath never moves and nothing they build on top of it ever breaks.
 
-When you write a program in Common LIsp you often won’t be able to find a library you need. Quicklisp, the main Common Lisp package manager, has a couple thousand projects while npm has millions.
+When you write a program in Common Lisp you often won’t be able to find a library you need. Quicklisp, the main Common Lisp package manager, has a couple thousand projects while npm has millions.
 
 But I don't think that's a problem anymore. Most programs today depend on millions of lines of code from packages that keep getting compromised. You don’t want that in yours. Also, with an LLM you could just write the part you need yourself or port the whole library — and LLMs seem to be really good at porting code.
 
