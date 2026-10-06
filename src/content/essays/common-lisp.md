@@ -21,7 +21,7 @@ What's interesting is that this is the same kind of list Common Lisp uses to sto
 
 This is what makes macros possible. A macro is a function that takes your code and returns new code in its place, that means you can add new constructs to the language itself.
 
-Once you can add to the language, you can build it up toward your problem. If you're writing software for a hospital, you can add words like patient and dose to the language, and then your program is short because it's written in those words. So in Lisp you don't just write a program, you write a language for your domain and then write the program in it.
+Once you can add to the language, you can build it up toward your problem. So in Lisp you don't just write a program, you write a language for your domain and then write the program in it.
 
 That matters a lot more now, because what makes a program valuable is the opinions behind it. And we're heading toward a world where software companies let their users change the product themselves, since with an LLM that's easy. So if a company builds a good opinionated domain language for its product, everything its users build on top of it will be much better, because they start from the company's opinions and not from scratch.
 
