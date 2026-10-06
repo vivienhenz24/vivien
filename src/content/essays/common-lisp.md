@@ -1,0 +1,52 @@
+---
+title: "Why Common Lisp Is Now the Best Programming Language"
+date: "2026-10-05"
+---
+
+Would you agree that some programming languages are better than others? If so then one of them must be the best. And it’s actually Common Lisp especially now that LLMs can write code.
+
+LLMs write code really fast, and that changes a lot, because writing code used to be the slow part. Now the slow part is finding out if your program actually works, and before you can do that you have to rebuild it, which can take a few minutes.
+
+When humans wrote the code this didn't matter much, because writing took way longer than waiting for it to compile and start running. But now it does, so how long your feedback loop takes is what decides how fast you can build.
+
+In Common Lisp that loop almost doesn't exist because there is no real distinction between read-time, compile-time, and runtime (Graham). Common Lisp is image-based which means that your program is a live image in memory, so a new version of a function replaces the old one right away without having to restart anything.
+
+Also, in most languages an error will crash your program. So if you’re writing code with an LLM it will have to read your crash logs to make some changes and run your program again. In Common Lisp your program won’t crash, it’ll stop and open a debugger with the whole stack and all the variables. You can just point your LLM at the debugger, and it’ll make its fix and resume the program.
+
+To my knowledge Common Lisp is the only mainstream language that does all of this.
+
+Lisp stands for "List Processing." In Common Lisp, code is written as lists. For example, (+ 1 2) is a program that adds two numbers, but it's also just a list of three things: the symbol +, and the numbers 1 and 2.
+
+What's interesting is that this is the same kind of list Common Lisp uses to store data, and since the language is built around processing lists all its tools for working with data also work on code. So a program can take another program and change it, for example it can turn (+ 1 2) into (\* 1 2), and run the result right away
+
+This is what makes macros possible. A macro is a function that takes your code and returns new code in its place, that means you can add new constructs to the language itself.
+
+Once you can add to the language, you can build it up toward your problem. If you're writing software for a hospital, you can add words like patient and dose to the language, and then your program is short because it's written in those words. So in Lisp you don't just write a program, you write a language for your domain and then write the program in it.
+
+That matters a lot more now, because what makes a program valuable is the opinions behind it. And we're heading toward a world where software companies let their users change the product themselves, since with an LLM that's easy. So if a company builds a good opinionated domain language for its product, everything its users build on top of it will be much better, because they start from the company's opinions and not from scratch.
+
+Take an ERP. Every company runs a little differently, so almost everyone ends up needing to change it. But if the ERP is written in its own domain language, you can just ask an LLM to make the change in that language. The change will naturally follow the domain language’s underlying opinions, so it fits the product instead of breaking it
+
+And it's not just better, it's also cheaper. Lisp programs are often much more concise because macros let you abstract away recurring patterns and make them part of the language itself. So the bigger the program gets, the bigger the difference. In my own experience the apps I've built in Common Lisp end up about six to seven times shorter than the Python versions.
+
+For LLMs, less code means fewer tokens, and tokens are what you pay for so you spend less on development.
+
+It also means a bigger portion of your program can fit in the LLM's context window. If your LLM has your entire program in its context window then it has a complete view of your intent, which leads to it making better decisions. In my experience a lot of LLM bugs stem from it changing one piece of my program without seeing the rest. So with Common Lisp that happens less often.
+
+Common Lisp is an ANSI standard and it hasn't been updated since 1994. I like this feature. And going back to our ERP example, if your users change the product themselves, that's exactly what you want since the language underneath never moves and nothing they build on top of it ever breaks.
+
+When you write a program in Common LIsp you often won’t be able to find a library you need. Quicklisp, the main Common Lisp package manager, has a couple thousand projects while npm has millions.
+
+But I don't think that's a problem anymore. Most programs today depend on millions of lines of code from packages that keep getting compromised. You don’t want that in yours. Also, with an LLM you could just write the part you need yourself or port the whole library — and LLMs seem to be really good at porting code.
+
+Lastly, I'm seeing now that a lot of people are programming now in the hope of building a business. An obvious objection to building products in Common Lisp is that you’ll have a hard time finding engineers since so few people know how to program in it.
+
+But I don't think that really matters now. If you want to build a successful company you want to hire the best technical people: the ones who are really good at learning new things. So in your coding interviews just make them learn Common Lisp, and there you go. You'll see how fast people pick things up, and the ones who do well will probably keep learning it and get really good at it.
+
+In conclusion, next time you want to write a program use Common Lisp.
+
+---
+
+Works Cited
+
+Graham, Paul. "What Made Lisp Different." Paul Graham, May 2002, paulgraham.com/diff.html. Accessed 5 Oct. 2026.
