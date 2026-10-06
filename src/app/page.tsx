@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { getAllContent } from '@/lib/content'
 
 export default function Home() {
-  const projects = getAllContent().filter((item) => item.type === 'project')
+  const projects = getAllContent().filter((item) => item.type === 'project' || item.id === 'common-lisp')
 
   return (
     <div className="min-h-screen p-8">
