@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@fuzzycanary/core':
-        specifier: ^0.2.1
-        version: 0.2.1(react@19.1.0)
       '@mediapipe/tasks-vision':
         specifier: ^0.10.35
         version: 0.10.35
@@ -137,14 +134,6 @@ packages:
   '@eslint/plugin-kit@0.4.1':
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@fuzzycanary/core@0.2.1':
-    resolution: {integrity: sha512-WOz80NQlJdJ8jVWoHGr0WhQz/S4IKGR60N7sE8s0D98bryENw5PI/2jQl7b5PWGbuDGjWgGWPX2ajS/otVV0Og==}
-    peerDependencies:
-      react: '>=16.8.0'
-    peerDependenciesMeta:
-      react:
-        optional: true
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2282,10 +2271,6 @@ snapshots:
     dependencies:
       '@eslint/core': 0.17.0
       levn: 0.4.1
-
-  '@fuzzycanary/core@0.2.1(react@19.1.0)':
-    optionalDependencies:
-      react: 19.1.0
 
   '@humanfs/core@0.19.1': {}
 

@@ -10,7 +10,6 @@
     "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix"
   },
   "dependencies": {
-    "@fuzzycanary/core": "^0.2.1",
     "@mediapipe/tasks-vision": "^0.10.35",
     "@vercel/analytics": "^1.6.1",
     "gray-matter": "^4.0.3",

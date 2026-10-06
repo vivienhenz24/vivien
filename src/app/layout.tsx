@@ -1,6 +1,5 @@
 
 import type { Metadata } from "next";
-import { Canary } from '@fuzzycanary/core/react'
 import "./globals.css";
 import 'katex/dist/katex.min.css';
 import AnalyticsWrapper from './analytics'
@@ -21,7 +20,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased text-gray-900">
-        <Canary />
         {children}
         <AnalyticsWrapper />
       </body>

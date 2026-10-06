@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { getAllContent } from '@/lib/content'
 
 export default function Home() {
-  const projects = getAllContent().filter((item) => item.type === 'project' || item.id === 'common-lisp')
+  const projects = getAllContent().filter((item) => item.type === 'project' || ['common-lisp', 'fuzzycanary'].includes(item.id))
 
   return (
     <div className="min-h-screen p-8">

@@ -1,6 +1,12 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getContentById } from '@/lib/content'
+import { getAllContent, getContentById } from '@/lib/content'
+
+export const dynamicParams = false
+
+export function generateStaticParams() {
+  return getAllContent().map((item) => ({ id: item.id }))
+}
 
 export default async function ContentPage({
   params,
